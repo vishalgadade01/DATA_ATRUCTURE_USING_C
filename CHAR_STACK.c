@@ -15,7 +15,7 @@ int isempty()
 {
     if(top==BOTTOM)
     {
-        return 1;.
+        return 1;
     }
     else
     {
