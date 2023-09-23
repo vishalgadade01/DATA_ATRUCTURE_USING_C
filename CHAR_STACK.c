@@ -1,115 +1,111 @@
-#include<stdio.h>
 
-#define SIZE 3
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+#define SIZE 20
 #define BOTTOM -1
 
-int stack[SIZE];
+char stack[3][SIZE];
 int top;
+char  *temp[15];
 
 void init()
 {
-    top=BOTTOM;
-}
-
-int isempty()
-{
-    if(top==BOTTOM)
-    {
-        return 1;
-    }
-    else
-    {
-        return 0;
-    }
+	top=BOTTOM;
 }
 
 int isfull()
 {
-    if(top==SIZE-1)
-    {
-        return 1;
-    }
-    else
-    {
-        return 0;
-    }
+	if(top==SIZE-1)
+	{
+		return 1;
+	}
+	else
+	{
+	return 0;
+	} 
 }
 
-void push(int item)
+int isempty()
 {
-    if(isfull())
-    {
-        printf("Stack is full!!\n");
-
-    }
-    else
-    {
-        top++;
-        stack[top]=item;
-    }
+	if(top==BOTTOM)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
 }
 
-int pop()
+void push(char item[])
 {
-    int temp;
+	if(isfull())
+	{
+		printf("Stack is full!!!\n");
+	}
+	else
+	{
+		top++;
+		strcpy(stack[top],item);
+    }
 
-    if(isempty())
-    {
-        printf("\nStack is empty\n");
-        return -1;
-    }
-    else
-    {
-        temp=stack[top];
-        top--;
-        return temp;
-    }
 }
 
-int peek()
+void pop()
 {
-    if(isempty())
-    {
-        printf("\nStack is empty!!!\n");
-        return -1;
-    }
-    else
-    {
-        return stack[top];
-    }
+	
+	if(isempty())
+	{
+		printf("Stack is empty!!!\n");
+		
+	}
+	else
+	{
+		strcpy(temp,stack[top]);
+		top--;
+	}
+	
+	  
+
+} 
+
+void peek()
+{
+	
+	if(isempty())
+	{
+		printf("Stack is empty!!!\n");
+		
+	}
+	else
+	{
+		strcpy(temp,stack[top]);
+		
+
+	}
 }
 
 int main()
 {
-    int item;
-    init();
+	
 
-    push(11);
-    push(22);
-    push(33);
-    push(44);
-    push(55);
+	push("vishal");
+	push("Gadade");
+	
+	pop();
 
-    item=peek();
-    printf("%d ",item);
+	printf("poped element: %s \n",temp);
 
-    item=peek();
-    printf("%d ",item);
+	pop();
+	printf("poped element: %s \n",temp);
 
-    
-    item=pop();
-    printf("%d ",item);
-
-    item=pop();
-    printf("%d ",item);
-
-    item=pop();
-    printf("%d ",item);
-
-    item=pop();
-    
-
-    return 0;
-
-
+	pop();
+	printf("poped element: %s \n",temp);
+	pop();
+	
+	
+	
+	
 }
