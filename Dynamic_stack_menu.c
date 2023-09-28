@@ -7,7 +7,7 @@ struct node
 {
   struct node *prev;
   int data;
-  //struct node *next;
+  struct node *next;
 };
 
 struct node *top;
@@ -42,7 +42,7 @@ void push(int data)
 	}
 	
 	t->data=data;
-	//t->next=NULL;
+	t->next=NULL;
 	t->prev=NULL;
 
 	if(top==BOTTOM)
@@ -51,9 +51,9 @@ void push(int data)
 	}
 	else
 	{
-	//	top->next=t;
+		top->next=t;
 		t->prev=top;
-	//	t->next=NULL;
+		t->next=NULL;
 		top=t;
     
     }
@@ -72,10 +72,10 @@ int pop()
 	top=top->prev;
 	free(t);
 
-/*	if(top!=BOTTOM)
+	if(top!=BOTTOM)
 	{
 		top->next=NULL;
-	} */
+	} 
 	return temp;
 
 }
@@ -83,6 +83,22 @@ int pop()
 int peek()
 {
 	return top->data;
+}
+
+void Display()
+{
+	struct node *head;
+	head=top;
+	while(head->prev!=NULL)
+		head=head->prev;
+
+	printf("\nYour data: ");
+	while(head!=NULL)
+	{
+		printf(" %d ",head->data);
+		head=head->next;
+	}
+	printf("\n");
 }
 
 int main()
@@ -93,14 +109,15 @@ int main()
 	while(1)
 	{
 		int op;
-      printf("\n ***************\n");
-        printf(" *    MENU     *\n");
-        printf(" ***************\n");
+  printf("\n ***************\n");
+    printf(" *    MENU     *\n");
+    printf(" ***************\n");
 		printf(" * 0.Exit      *\n");
 		printf(" * 1.push      *\n");
 		printf(" * 2.pop       *\n");
 		printf(" * 3.peek      *\n");
-	    printf(" ***************\n");	
+		printf(" * 4.Display   *\n");
+	  printf(" ***************\n");	
 
 		printf("\nEnter the option:");
 		scanf("%d",&op);
@@ -137,6 +154,17 @@ int main()
 		           	printf("\nPeeked element is [%d].\n",peek());
 		           }
 		           break;
+
+		    case 4:
+		          if(isempty())
+		          {
+		          	printf("Stack is empty..!!!\n");
+		          }
+		          else
+		          {
+		           Display();       
+		          }
+		          break;
 
 		    default:
 		    
