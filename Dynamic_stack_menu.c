@@ -67,6 +67,12 @@ int pop()
 	struct node *t=NULL;
 	int temp;
 
+	if(isempty())
+	{
+		printf("Stack is Empty..!!!\n");
+		return -1;
+	}
+
 	temp=top->data;
 	t=top;
 	top=top->prev;
@@ -82,12 +88,25 @@ int pop()
 
 int peek()
 {
+	if(isempty())
+	{
+		printf("Stack is Empty..!!!\n");
+		return -1;
+	}
+
 	return top->data;
 }
 
 void Display()
 {
 	struct node *head;
+
+	if(isempty())
+	{
+		printf("Stack is Empty..!!!\n");
+		return;
+	}
+
 	head=top;
 	while(head->prev!=NULL)
 		head=head->prev;
