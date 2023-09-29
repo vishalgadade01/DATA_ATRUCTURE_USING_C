@@ -37,7 +37,7 @@ void push(int data)
 
 	if(t==NULL)
 	{
-		printf("Stack is full..!!!\n");
+		printf("Insufficent memory!!!\n");
 		return;//For exiting from function
 	}
 	
