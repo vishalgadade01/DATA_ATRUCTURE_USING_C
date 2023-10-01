@@ -8,9 +8,9 @@ struct node
 {
 	struct node *up;
 	struct node *prev;
-    int data;
-    struct node *next;
-    struct node *down;
+  int data;
+  struct node *next;
+  struct node *down;
 };
 
 struct node *Create_linked_list(int n)
@@ -86,13 +86,13 @@ struct node *Create_linked_list1(struct node *head,int n)
 	return f;
 }
 
-void Display(struct node *f,int n)
+void Display()
 {
 	struct node *t=NULL,*v=NULL;
-  v=f;
+  v=head;
 	t=v;
 
-	for(int i=1;i<=n;i++)
+	while(v!=NULL)
 	{
 
 	while(t!=NULL)
@@ -108,6 +108,29 @@ void Display(struct node *f,int n)
   }
 	
 		
+}
+
+struct node *Free_all()
+{
+	struct node *t=NULL,*l=NULL;
+	
+	t=head;
+
+
+while(head!=NULL)
+{
+	head=head->down;
+	while(t!=NULL)
+	{
+		l=t;
+		t=t->next;
+		free(l);
+   }
+   head=t;
+ }
+
+ return head;
+
 }
 
 
@@ -145,9 +168,15 @@ int main()
    temp=Create_linked_list1(temp,n);
   }
     
- printf("Matrix is:\n");
+   printf("Your Matrix:\n");
+ 
+	Display();
 
- Display(head,row);
+	head=Free_all();
 
- return 0;
+
+	return 0;
+
+
+
 }
