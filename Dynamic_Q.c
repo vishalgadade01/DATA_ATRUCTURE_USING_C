@@ -9,15 +9,15 @@ struct node
 };
 
 struct node *front;
-struct node *reare;
+struct node *rear;
 
 void init()
 {
-  front=reare=NULL;
+  front=rear=NULL;
 }
 int isempty()
 {
-  return reare==NULL;
+  return rear==NULL;
 }
 
 void push_Q(int item)
@@ -32,15 +32,15 @@ void push_Q(int item)
   temp->data=item;
   temp->next=NULL;
 
-  if(reare==NULL)
+  if(rear==NULL)
   {
-    front=reare=temp;
+    front=rear=temp;
 
   }
   else
   {
-    reare->next=temp;
-    reare=temp;
+    rear->next=temp;
+    rear=temp;
 
   }
 
@@ -59,7 +59,7 @@ int pop_Q()
   
   temp=front->data;
   t=front;
-  if(front!=reare)
+  if(front!=rear)
   {
   front=front->next;
    }
