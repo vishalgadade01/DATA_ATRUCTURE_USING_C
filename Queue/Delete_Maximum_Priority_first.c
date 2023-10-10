@@ -203,7 +203,7 @@ int peek_Q()
 	}
 	else
 	{
-		return rear->data;
+		return front->data;
 	}
 }
 
@@ -380,7 +380,7 @@ Enter the priority:15
 *************
 Enter the option:4
 
-Your data is in from of [data | priority] :{ [4 | 3 ],[55 | 9 ],[66 | 2 ],[99 | 10 ],[100 | 15 ]}.
+Your data is in fomm of [data | priority] :{ [4 | 3 ],[55 | 9 ],[66 | 2 ],[99 | 10 ],[100 | 15 ]}.
 *************
 * 0.Exit    *
 * 1.Push    *
@@ -389,7 +389,7 @@ Your data is in from of [data | priority] :{ [4 | 3 ],[55 | 9 ],[66 | 2 ],[99 | 
 * 4.Display *
 *************
 Enter the option:3
-Peeked element is: 100.
+Peeked element is: 4.
 *************
 * 0.Exit    *
 * 1.Push    *
@@ -409,7 +409,7 @@ Maximum_priority is: [15].
 *************
 Enter the option:4
 
-Your data is in from of [data | priority] :{ [4 | 3 ],[55 | 9 ],[66 | 2 ],[99 | 10 ]}.
+Your data is in form of [data | priority] :{ [4 | 3 ],[55 | 9 ],[66 | 2 ],[99 | 10 ]}.
 *************
 * 0.Exit    *
 * 1.Push    *
@@ -429,7 +429,7 @@ Maximum_priority is: [10].
 *************
 Enter the option:4
 
-Your data is in from of [data | priority] :{ [4 | 3 ],[55 | 9 ],[66 | 2 ]}.
+Your data is in form of [data | priority] :{ [4 | 3 ],[55 | 9 ],[66 | 2 ]}.
 *************
 * 0.Exit    *
 * 1.Push    *
@@ -458,7 +458,7 @@ Your data is in from of [data | priority] :{ [4 | 3 ],[55 | 9 ],[66 | 2 ],[33 | 
 * 4.Display *
 *************
 Enter the option:3
-Peeked element is: 33.
+Peeked element is: 4.
 *************
 * 0.Exit    *
 * 1.Push    *
@@ -488,7 +488,7 @@ Maximum_priority is: [4].
 *************
 Enter the option:4
 
-Your data is in from of [data | priority] :{ [4 | 3 ],[66 | 2 ]}.
+Your data is in form of [data | priority] :{ [4 | 3 ],[66 | 2 ]}.
 *************
 * 0.Exit    *
 * 1.Push    *
@@ -517,7 +517,7 @@ Peeked element is: 66.
 *************
 Enter the option:4
 
-Your data is in from of [data | priority] :{ [66 | 2 ] }.
+Your data is in form of [data | priority] :{ [66 | 2 ] }.
 *************
 * 0.Exit    *
 * 1.Push    *
