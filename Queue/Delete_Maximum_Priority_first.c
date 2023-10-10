@@ -70,7 +70,7 @@ void Display(struct node *f)//For display data
 
 	t=f;
 
-	printf("\nYour data is in from of [data | priority] :{ ");
+	printf("\nYour data is in form of [data | priority] :{ ");
 	if(rear==front)
 	{
 		printf("[%d | %d ] }.\n",t->data,t->priority); // if only one data is present in linked list.
