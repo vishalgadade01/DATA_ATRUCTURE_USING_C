@@ -2,6 +2,15 @@
 #include<stdlib.h>
 #define NEWNODE (struct node *)malloc(sizeof(struct node))
 
+
+void init();
+int isempty();
+struct node *Add_New_Data_in_Queue(struct node*,int ,int );
+void Display(struct node*);
+int Find_Maximum_Privority(struct node* );
+struct node *Delete_Maximum_priority(struct node *);
+int peek_Q();
+
 struct node 
 {
   struct node *previous;
